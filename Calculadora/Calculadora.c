@@ -1,35 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Prototipo de funciones
-int sumar();
-int restar();
-int multiplicar();
-int dividir();
-int cuadrado();
-int porcentaje();
-int raiz_Cuadrada();
+int sumar(int numero1, int numero2);
+int restar(int numero1, int numero2);
+int multiplicar(int numero1, int numero2);
+int dividir(int numero1, int numero2);
+int cuadrado(int numero1);
+int porcentaje(int numero1);
+int raiz_Cuadrada(int numero1);
 void menu_Operaciones();
 
 // Funcion para suma de dos numeros
-int sumar();
+int sumar(int numero1, int numero2){
+
+}
 
 // Funcion para restar dos numeros
-int restar();
+int restar(int numero1, int numero2){}
 
 // Funcion para multiplicar de dos numeros
-int multiplicar();
+int multiplicar(int numero1, int numero2){}
 
 // Funcion para dividir de dos numeros
-int dividir();
+int dividir(int numero1, int numero2){}
 
 // Funcion para calcular el porcentaje de un numero
-int porcentaje();
+int porcentaje(int numero1){}
 
 // Funcion para Elevar al cuadrado un numero
-int cuadrado();
+int cuadrado(int numero1){}
 
 // Funcion para obtener raiz cuadrada de un numero
-int raiz_Cuadrada();
+int raiz_Cuadrada(int numero1){}
 
 // Funcion para  menu de opciones
 void menu_Operaciones()
@@ -46,6 +49,7 @@ void menu_Operaciones()
         printf("6. Cuadrado\n");
         printf("7. Raiz Cuadrada\n");
         printf("8. Salir\n");
+        printf("Ingrese opcion: ");
         scanf("%d", &opcion);
 
         switch (opcion)
@@ -85,18 +89,16 @@ void menu_Operaciones()
             raiz_Cuadrada();
         }
         break;
-
-        default:
+        case 8:
         {
-            printf("Ingrese una opcion valida:");
+            exit(0);
         }
-        break;
         }
 
     } while (opcion != 8);
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     menu_Operaciones();
 
