@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 // Prototipo de funciones
 int sumar(int valor1, int valor2);
@@ -8,7 +9,7 @@ int multiplicar(int valor1, int valor2);
 int dividir(int valor1, int valor2);
 float porcentaje(int valor1, float porcentaje);
 int cuadrado(int valor1);
-int raiz_Cuadrada(int valor1);
+double raiz_Cuadrada(int valor1);
 int menu_Operaciones();
 
 // Funcion para suma de dos numeros
@@ -42,10 +43,16 @@ float porcentaje(int valor1, float porcentaje)
 }
 
 // Funcion para Elevar al cuadrado un numero
-int cuadrado(int valor1) {}
+int cuadrado(int valor1)
+{
+    return (valor1 * valor1);
+}
 
 // Funcion para obtener raiz cuadrada de un numero
-int raiz_Cuadrada(int valor1) {}
+double raiz_Cuadrada(int valor1)
+{
+    return sqrt(valor1);
+}
 
 // Funcion para  menu de opciones
 int menu_Operaciones()
@@ -104,7 +111,7 @@ int menu_Operaciones()
         break;
         case 8:
         {
-            return 0;
+            return 8;
         }
         }
 
@@ -115,89 +122,88 @@ int main()
 {
     int opcion, valor1, valor2, resultado;
     float valorPorcentaje;
-    opcion = menu_Operaciones();
+    do
+    {
+        opcion = menu_Operaciones();
 
-    switch (opcion)
-    {
-    case 1:
-    {
-        printf("Ingrese numero 1: ");
-        scanf("%d", &valor1);
-        printf("Ingrese numero 2: ");
-        scanf("%d", &valor2);
-        resultado = sumar(valor1, valor2);
-        printf("%d", resultado);
-        printf("\n");
-    }
-    break;
-    case 2:
-    {
-        printf("Ingrese numero 1: ");
-        scanf("%d", &valor1);
-        printf("Ingrese numero 2: ");
-        scanf("%d", &valor2);
-        resultado = restar(valor1, valor2);
-        printf("%d", resultado);
-        printf("\n");
-    }
-    break;
-    case 3:
-    {
-        printf("Ingrese numero 1: ");
-        scanf("%d", &valor1);
-        printf("Ingrese numero 2: ");
-        scanf("%d", &valor2);
-        resultado = multiplicar(valor1, valor2);
-        printf("%d", resultado);
-        printf("\n");
-    }
-    break;
-    case 4:
-    {
-        printf("Ingrese numero 1: ");
-        scanf("%d", &valor1);
-        printf("Ingrese numero 2: ");
-        scanf("%d", &valor2);
-        resultado = dividir(valor1, valor2);
-        printf("%d", resultado);
-        printf("\n");
-    }
-    break;
-    case 5:
-    {
-        printf("Ingrese numero 1: ");
-        scanf("%d", &valor1);
-        printf("Ingrese porcentaje: ");
-        scanf("%f", &valorPorcentaje);
-        valor2 = (valor1 * (valorPorcentaje/ 100));
-        resultado = porcentaje(valor1, valor2);
-        printf("%d", resultado);
-        printf("\n");
-    }
-    break;
-    case 6:
-    {
-        printf("Ingrese numero 1: ");
-        scanf("%d", &valor1);
-        resultado = cuadrado(valor1);
-        printf("%d", resultado);
-        printf("\n");
-    }
-    break;
-    case 7:
-    {
-        printf("Ingrese numero 1: ");
-        scanf("%d", &valor1);
-        resultado = raiz_Cuadrada(valor1);
-        printf("%d", resultado);
-        printf("\n");
-    }
-    break;
-    case 0:
-    {
-        exit(0);
-    }
-    }
+        switch (opcion)
+        {
+        case 1:
+        {
+            printf("Ingrese numero 1: ");
+            scanf("%d", &valor1);
+            printf("Ingrese numero 2: ");
+            scanf("%d", &valor2);
+            resultado = sumar(valor1, valor2);
+            printf("%d", resultado);
+            printf("\n");
+        }
+        break;
+        case 2:
+        {
+            printf("Ingrese numero 1: ");
+            scanf("%d", &valor1);
+            printf("Ingrese numero 2: ");
+            scanf("%d", &valor2);
+            resultado = restar(valor1, valor2);
+            printf("%d", resultado);
+            printf("\n");
+        }
+        break;
+        case 3:
+        {
+            printf("Ingrese numero 1: ");
+            scanf("%d", &valor1);
+            printf("Ingrese numero 2: ");
+            scanf("%d", &valor2);
+            resultado = multiplicar(valor1, valor2);
+            printf("%d", resultado);
+            printf("\n");
+        }
+        break;
+        case 4:
+        {
+            printf("Ingrese numero 1: ");
+            scanf("%d", &valor1);
+            printf("Ingrese numero 2: ");
+            scanf("%d", &valor2);
+            resultado = dividir(valor1, valor2);
+            printf("%d", resultado);
+            printf("\n");
+        }
+        break;
+        case 5:
+        {
+            printf("Ingrese numero 1: ");
+            scanf("%d", &valor1);
+            printf("Ingrese porcentaje: ");
+            scanf("%f", &valorPorcentaje);
+            valor2 = (valor1 * (valorPorcentaje / 100));
+            resultado = porcentaje(valor1, valor2);
+            printf("%d", resultado);
+            printf("\n");
+        }
+        break;
+        case 6:
+        {
+            printf("Ingrese numero 1: ");
+            scanf("%d", &valor1);
+            resultado = cuadrado(valor1);
+            printf("%d", resultado);
+            printf("\n");
+        }
+        break;
+        case 7:
+        {
+            printf("Ingrese numero 1: ");
+            scanf("%d", &valor1);
+            resultado = raiz_Cuadrada(valor1);
+            printf("%d", resultado);
+            printf("\n");
+        }
+        break;
+        }
+    } while (opcion != 8);
 
     return 0;
 }
