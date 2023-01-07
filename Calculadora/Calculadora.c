@@ -18,23 +18,27 @@ int sumar(int valor1, int valor2)
 }
 
 // Funcion para restar dos numeros
-int restar(int valor1, int valor2) {
+int restar(int valor1, int valor2)
+{
     return (valor1 - valor2);
 }
 
 // Funcion para multiplicar de dos numeros
-int multiplicar(int valor1, int valor2) {
+int multiplicar(int valor1, int valor2)
+{
     return (valor1 * valor2);
 }
 
 // Funcion para dividir de dos numeros
-int dividir(int valor1, int valor2) {
+int dividir(int valor1, int valor2)
+{
     return (valor1 / valor2);
 }
 
 // Funcion para calcular el porcentaje de un numero
-float porcentaje(int valor1, float porcentaje) {
-    
+float porcentaje(int valor1, float porcentaje)
+{
+    return (valor1 + porcentaje);
 }
 
 // Funcion para Elevar al cuadrado un numero
@@ -110,6 +114,7 @@ int menu_Operaciones()
 int main()
 {
     int opcion, valor1, valor2, resultado;
+    float valorPorcentaje;
     opcion = menu_Operaciones();
 
     switch (opcion)
@@ -162,7 +167,10 @@ int main()
     {
         printf("Ingrese numero 1: ");
         scanf("%d", &valor1);
-        resultado = porcentaje(valor1);
+        printf("Ingrese porcentaje: ");
+        scanf("%f", &valorPorcentaje);
+        valor2 = (valor1 * (valorPorcentaje/ 100));
+        resultado = porcentaje(valor1, valor2);
         printf("%d", resultado);
         printf("\n");
     }
