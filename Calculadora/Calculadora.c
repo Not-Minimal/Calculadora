@@ -29,7 +29,6 @@ int multiplicar(int valor1, int valor2)
 {
     return (valor1 * valor2);
 }
-
 // Funcion para dividir de dos numeros
 int dividir(int valor1, int valor2)
 {
@@ -54,6 +53,7 @@ double raiz_Cuadrada(int valor1)
     return sqrt(valor1);
 }
 
+// Cambiado en Nvim
 // Funcion para  menu de opciones
 int menu_Operaciones()
 {
